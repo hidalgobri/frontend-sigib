@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h3 mat-dialog-title>
+      <span class="bold">{{data.carrera ? 'Editar' : 'Crear'}} carrera</span>
+    </h3>
+  </div>
+</div>
+
+  <div mat-dialog-content>
+  <div class="row contenido-modal">
+    <div class="col-md-12">
+      <p class="descripcion-modal">Ingrese los campos para {{ data.carrera ? 'editar' : 'crear'}} un carrera:</p>
+    </div>
+    <div class="col-sm-12">
+      <app-formulario-carrera
+        (carreraValida)="validarFormulario($event)"
+        [carrera]="data.carrera"
+      >
+      </app-formulario-carrera>
+    </div>
+  </div>
+</div>
+
+<mat-dialog-actions class="justify-content-end">
+  <div class="d-flex flex-row-reverse">
+    <div class="p-2">
+      <button class="btn btn-primary" (click)="metodoCrearEditar()" [disabled]="!formularioValido">GUARDAR
+      </button>
+    </div>
+    <div class="p-2">
+      <button mat-dialog-close class="btn btn-outline-secondary">CANCELAR</button>
+    </div>
+  </div>
+</mat-dialog-actions>
+

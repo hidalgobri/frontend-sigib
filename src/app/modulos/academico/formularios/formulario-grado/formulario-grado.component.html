@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-horizontal"
+          [formGroup]="formularioEstudiante"
+          novalidate autocomplete="off">
+      <fieldset>
+        <div class="row" >
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Nota Proyecto</mat-label>
+              <input matInput placeholder="Ej. 8.5" formControlName="notaProyecto" required>
+              <mat-error *ngIf="mensajesError.notaProyecto.length > 0">
+                <div *ngFor="let mensaje of mensajesError.notaProyecto">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Estudiante</mat-label>
+              <input matInput required formControlName="estudiante">
+            </mat-form-field>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

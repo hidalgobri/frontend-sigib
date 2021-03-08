@@ -1,0 +1,50 @@
+<!--<div *ngIf="mostrarFormularioRegistro" class="row">-->
+<div class="col-sm-12">
+  <form class="form-horizontal"
+        [formGroup]="formularioRegistro"
+        novalidate autocomplete="off">
+    <fieldset>
+      <div class="row">
+        <div class="col-sm-12" style="margin-bottom: 1.5rem">
+          <mat-form-field>
+            <mat-label>Cédula</mat-label>
+            <input
+              matInput placeholder="Ingrese su cédula"
+              formControlName="cedula" required>
+            <mat-error *ngIf="mensajesError.cedula.length > 0">
+              <div *ngFor="let mensaje of mensajesError.cedula">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput placeholder="Ingrese su contraseña"
+              formControlName="password" required
+              type="password"
+            >
+            <mat-error *ngIf="mensajesError.password.length > 0">
+              <div *ngFor="let mensaje of mensajesError.password">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+<br>
+        <div class="col-sm-12">
+            <mat-form-field>
+              <mat-label>Perfil</mat-label>
+              <select matNativeControl required placeholder="Escoja un perfil" formControlName="rol">
+                <option value="Estudiante">Estudiante</option>
+                <option value="Profesor">Profesor</option>
+                <option value="Administrador">Administrador</option>
+              </select>
+            </mat-form-field>
+              <mat-error *ngIf="mensajesError.rol.length > 0">
+              <div *ngFor="let mensaje of mensajesError.rol">{{mensaje}}</div>
+            </mat-error>
+        </div>
+      </div>
+    </fieldset>
+    <ng-content></ng-content>
+  </form>
+</div>

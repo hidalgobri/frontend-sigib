@@ -1,0 +1,80 @@
+<nav aria-label="breadcrumb" class="margen-top-migas">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/administrador', 'menu']">
+        Menú Principal
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Menú configuraciones
+    </li>
+  </ol>
+</nav>
+
+<div class="container">
+  <h2>Menú configuración</h2>
+  <p>Selecciona una opción de menú de configuración.</p>
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <div
+      class="col-md-3 separacion-top-6 animated fadeInLeft"
+      [style.animation-delay]="'0.2s'"
+    >
+      <app-opcion-menu
+        [textoBoton]="opcionesMenuAjustes[0].textoBoton"
+        [descripcionOpcion]="opcionesMenuAjustes[0].descripcionOpcion"
+        [pathImagen]="opcionesMenuAjustes[0].pathImagen"
+        [routerLink]="opcionesMenuAjustes[0].dirigirA"
+      >
+      </app-opcion-menu>
+    </div>
+    <div class="col-md-2"></div>
+    <div
+      class="col-md-3 separacion-top-6 animated fadeInLeft"
+      [style.animation-delay]="'0.4s'"
+    >
+      <app-opcion-menu
+        [textoBoton]="opcionesMenuAjustes[1].textoBoton"
+        [descripcionOpcion]="opcionesMenuAjustes[1].descripcionOpcion"
+        [pathImagen]="opcionesMenuAjustes[1].pathImagen"
+        [routerLink]="opcionesMenuAjustes[1].dirigirA"
+      >
+      </app-opcion-menu>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <div
+      class="col-md-3 separacion-top-6 animated fadeInLeft"
+      [style.animation-delay]="'0.6s'"
+    >
+      <app-opcion-menu
+        [textoBoton]="opcionesMenuAjustes[2].textoBoton"
+        [descripcionOpcion]="opcionesMenuAjustes[2].descripcionOpcion"
+        [pathImagen]="opcionesMenuAjustes[2].pathImagen"
+        [routerLink]="opcionesMenuAjustes[2].dirigirA"
+      >
+      </app-opcion-menu>
+    </div>
+    <div class="col-md-2"></div>
+    <div
+      class="col-md-3 separacion-top-6 animated fadeInLeft"
+      [style.animation-delay]="'0.8s'"
+    >
+      <app-opcion-menu
+        [textoBoton]="opcionesMenuAjustes[3].textoBoton"
+        [descripcionOpcion]="opcionesMenuAjustes[3].descripcionOpcion"
+        [pathImagen]="opcionesMenuAjustes[3].pathImagen"
+        [routerLink]="opcionesMenuAjustes[3].dirigirA"
+      >
+      </app-opcion-menu>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<br />
+<br />
+<br />

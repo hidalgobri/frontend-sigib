@@ -1,0 +1,94 @@
+<nav aria-label="breadcrumb" class="margen-top-migas">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/inicio']">
+        Menú Principal
+      </a>
+    </li>
+    <li class="breadcrumb-item active"
+        aria-current="page">
+      Ingreso al sistema
+    </li>
+  </ol>
+</nav>
+<div class="row separacion-top-4 ">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6 align-self-center">
+    <div class="card text-center">
+      <div class="card-header">
+        <h2 class="azul">
+          Ingreso al sistema
+        </h2>
+      </div>
+      <div class="card-body">
+    <div class="row justify-content-md-center">
+      <img
+      class="rounded mx-auto d-block with-margin"
+      width="100"
+      height="100"
+      src="assets/usuario.jpeg"
+      alt="usuario">
+    </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="skills">
+
+              <div class="charts">
+                <div class="chart chart--dev">
+                  <span class=" chart__title espacio-titulo-investor">
+                    SIGIB
+                  </span>
+                  <ul class="chart--horiz">
+                    <li class="chart__bar_azul" style="width: 100%;">
+          <span class="chart__label">
+            INFÓRMATE
+          </span>
+                    </li>
+                    <li class="chart__bar_rojo" style="width: 95%;">
+          <span class="chart__label">
+             MATRICÚLATE
+          </span>
+                    </li>
+                    <li class="chart__bar_azul" style="width: 90%;">
+          <span class="chart__label">
+            CONSULTA
+          </span>
+                    </li>
+                    <li class="chart__bar_rojo" style="width: 85%;">
+          <span class="chart__label">
+            GESTIONA
+          </span>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <app-registro-formulario
+              (registroValido)="formularioValido($event)">
+              <div class="row" style="margin-top: 1.5rem">
+                <div class="col-md-12">
+                  <div class="p-2">
+                    <button class="btn btn-success"
+                    (click)="irARutaMenu()"
+                    [disabled]="!datosUsuario"
+                            >Ingresar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </app-registro-formulario>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+      Sistema académico "SIGIB"
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+
+

@@ -1,0 +1,90 @@
+<nav aria-label="breadcrumb" class="margen-top-migas">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/administrador', 'menu']">
+        Menú Principal
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Menú Académico
+    </li>
+  </ol>
+</nav>
+<div class="container">
+  <h2>Menú Académico</h2>
+  <p>Selecciona una opción de menú de académico.</p>
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-3 separacion-top-6 animated fadeInLeft"
+        [style.animation-delay]="'0.2s'">
+    <app-opcion-menu
+      [textoBoton]="opcionesMenuAdministrador[0].textoBoton"
+      [descripcionOpcion]="opcionesMenuAdministrador[0].descripcionOpcion"
+      [pathImagen]="opcionesMenuAdministrador[0].pathImagen"
+      [routerLink]="opcionesMenuAdministrador[0].dirigirA"
+    >
+    </app-opcion-menu>
+  </div>
+
+  <div class="col-md-2"></div>
+
+  <div class="col-md-3 separacion-top-6 animated fadeInLeft"
+        [style.animation-delay]="'0.4s'">
+    <app-opcion-menu
+      [textoBoton]="opcionesMenuAdministrador[1].textoBoton"
+      [descripcionOpcion]="opcionesMenuAdministrador[1].descripcionOpcion"
+      [pathImagen]="opcionesMenuAdministrador[1].pathImagen"
+      [routerLink]="opcionesMenuAdministrador[1].dirigirA"
+    >
+    </app-opcion-menu>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-3 separacion-top-6 animated fadeInLeft"
+        [style.animation-delay]="'0.2s'">
+    <app-opcion-menu
+      [textoBoton]="opcionesMenuAdministrador[2].textoBoton"
+      [descripcionOpcion]="opcionesMenuAdministrador[2].descripcionOpcion"
+      [pathImagen]="opcionesMenuAdministrador[2].pathImagen"
+      [routerLink]="opcionesMenuAdministrador[2].dirigirA"
+    >
+    </app-opcion-menu>
+  </div>
+
+  <div class="col-md-2"></div>
+
+  <div class="col-md-3 separacion-top-6 animated fadeInLeft"
+        [style.animation-delay]="'0.4s'">
+    <app-opcion-menu
+      [textoBoton]="opcionesMenuAdministrador[3].textoBoton"
+      [descripcionOpcion]="opcionesMenuAdministrador[3].descripcionOpcion"
+      [pathImagen]="opcionesMenuAdministrador[3].pathImagen"
+      [routerLink]="opcionesMenuAdministrador[3].dirigirA"
+    >
+    </app-opcion-menu>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-3 separacion-top-6 animated fadeInLeft"
+        [style.animation-delay]="'0.2s'">
+    <app-opcion-menu
+      [textoBoton]="opcionesMenuAdministrador[4].textoBoton"
+      [descripcionOpcion]="opcionesMenuAdministrador[4].descripcionOpcion"
+      [pathImagen]="opcionesMenuAdministrador[4].pathImagen"
+      [routerLink]="opcionesMenuAdministrador[4].dirigirA"
+    >
+    </app-opcion-menu>
+  </div>
+
+  <div class="col-md-2"></div>
+</div>
+</div>

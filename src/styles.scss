@@ -1,0 +1,328 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../src/assets/estilos/separaciones/separaciones";
+@import "../src/assets/estilos/colores/colores";
+@import "../src/assets/estilos/fuente/fuente";
+@import "../src/assets/estilos/puntero/punteros";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~hover.css";
+@import "~angular2-toaster/toaster.min.css";
+
+.centered {
+  position: fixed;
+  top: 33%;
+  left: 33%;
+}
+
+.cargando-texto {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+body {
+  font-family: "glacial indifference", sans-serif;
+  cursor: default;
+}
+
+body .ui-widget {
+  font-family: "glacial indifference", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+// General
+.color-plomo {
+  color: #797978;
+}
+
+.color-verde {
+  color: #7fb638;
+}
+
+.contenedor-azul {
+  color: #fff;
+  background-color: #1f9994;
+  border: 1px solid #1AB081;
+  border-radius: 40px;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.logo-inicial {
+  width: 70%;
+}
+
+// botones
+
+button {
+  text-transform: uppercase;
+}
+
+.color-boom {
+  background-color: #22a752;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.color-crush {
+  background-color: #ffc041;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.color-split {
+  background-color: #ef7302;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.color-contra-split {
+  background-color: #6323c9;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.btn {
+  border-radius: 15px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #001e70;
+  border-color: #0033bf;
+  border-radius: 15px;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #002589;
+  border-color: #003bde;
+  border-radius: 15px;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #297fb8;
+  border-color: #17a2b8;
+  border-radius: 15px;
+}
+
+.btn-info:hover {
+  color: #fff;
+  background-color: #2b87c3;
+  border-color: #17a2b8;
+  border-radius: 15px;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: rgba(129, 182, 88, 0.69);
+  border-color: #7fb638;
+  border-radius: 15px;
+}
+
+.btn-sm {
+  border-radius: 15px;
+  font-weight: bolder;
+}
+
+.btn-success {
+  background-color: #7fb638;
+  border-color: #7fb638;
+  border-radius: 15px;
+}
+
+.btn-warning {
+  border-radius: 15px;
+}
+
+.btn-block {
+  border-radius: 15px;
+}
+
+.btn-outline-secondary {
+  border-radius: 15px;
+}
+
+// anclas
+body a {
+  color: #002589;
+  text-decoration: none;
+}
+
+body .ui-button {
+  background-color: #001e70;
+  border: 1px solid #0033bf;
+}
+
+// Migas de pan - Breadcrumb
+
+.breadcrumb {
+  padding: 1px;
+  padding-left: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+// Texto
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #4ea132;
+}
+
+.color-blanco {
+  color: #fff;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.tamanio-letras {
+  font-size: x-large;
+}
+
+.contenedor-azul-juego {
+  color: #fff;
+  background-color: #001e70;
+  border: 1px solid #0033bf;
+  border-radius: 40px;
+}
+
+// Cartas
+
+.card {
+  background: #ffffff;
+}
+.ui-card-body {
+  background-color: #002589;
+  color: #fff;
+  border: 1px solid #627bbd;
+  border-radius: 30px;
+}
+
+div.container-fluid div.ui-card-body {
+  color: #3a3a38;
+  border: 0px;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.bg-danger {
+  background-color: #02549b !important;
+  color: #ffffff;
+}
+
+.bg-success {
+  background-color: #7fb737 !important;
+  color: #002589;
+}
+
+.borde-error {
+  border-color: #02549b
+}
+
+.borde-success {
+  border-color: #7fb638
+}
+
+
+// dropdown
+body .ui-dropdown {
+  width: 100%;
+}
+
+// contenedor
+.contenedor-espacio {
+  margin-top: 40px;
+}
+
+// imagen slider
+img.ui-panel-images {
+  width: 100%;
+  max-height: 300px;
+}
+
+li.ui-galleria-panel.ng-star-inserted {
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin: auto;
+  max-height: 300px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  color: #fff;
+  background-color: #8da7c3;
+  border-color: #95a9bf;
+}
+
+.btn-success.disabled {
+  color: #fff;
+  background-color: #7fb737;
+  border-color: #7fb737;
+}
+
+
+body .ui-picklist .ui-picklist-list .ui-picklist-item.ui-state-highlight {
+  background-color: #c6d9e8;
+  color: #444242;
+}
+body .ui-listbox .ui-listbox-header .ui-listbox-filter-container {
+  width: 100%;
+}
+
+// jugadas
+.tamano-jugadas {
+  width: 100%;
+}
+
+h4.noticia {
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+//modal
+.mover-down {
+  padding-top: 32rem;
+}
+
+//imagen
+.imagen-trofeo {
+  max-width: 30%;
+  height: auto;
+}
+
+.margen-top-migas {
+  margin-top: 2.3rem;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

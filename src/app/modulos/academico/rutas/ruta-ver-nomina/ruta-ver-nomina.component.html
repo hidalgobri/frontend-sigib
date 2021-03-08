@@ -1,0 +1,95 @@
+<nav aria-label="breadcrumb" class="margen-top-migas">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/inicio']">
+        Menú Principal
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/administrador','menu','academico','menu-academico', 'profesores']">
+        Menú Profesor
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/administrador','menu','academico','menu-academico','profesores', 'notas-estudiante']">
+        Cursos Profesor
+      </a>
+    </li>
+    <li class="breadcrumb-item active"
+        aria-current="page">
+      Estudiantes
+    </li>
+  </ol>
+</nav>
+
+<div class="contenido">
+  <div class="row separacion-top-1 separacion-fondo-1">
+    <div class="col-sm-12 ">
+      <h3>
+        Estudiantes del curso {{nombreCurso}}
+      </h3>
+      <p>Lista de estudiantes del curso {{nombreCurso}}</p>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="row separacion-top-2 separacion-fondo-1">
+    <div class="col-sm-12">
+      <div class="col-sm-12">
+        <p-table
+          [columns]="columnas"
+          [value]="notas"
+          [lazy]="true"
+          (onLazyLoad)="cargarDatosLazy($event)"
+          [paginator]="false"
+          [rows]="rows"
+          [totalRecords]="totalRecords"
+          [loading]="loading"
+          [resizableColumns]="true"
+          [responsive]="true"
+          editMode="row"
+          dataKey="cedula"
+        >
+          <ng-template pTemplate="caption">
+            <div class="ui-helper-clearfix" style="text-align: left">
+              <button type="button" textContent="EXCEL" (click)="exportExcel()" class="btn btn-block btn-success">
+                EXCEL
+                <i class="fas fa-file-excel"></i>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th class="text-center" *ngFor="let col of columns" [style.width]="col.width">
+                {{col.header}}
+              </th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-rowData let-rowIndex let-columns="columns">
+
+            <tr>
+              <td class="text-center" *ngFor="let col of columns">
+                <div *ngIf="col.field==='cedula'">
+                  {{rowData[col.field]}}
+                </div>
+                <div *ngIf="col.field==='nombre'">
+                  {{rowData[col.field]}}
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="emptymessage" let-columns>
+            <tr>
+              <td [attr.colspan]="columns.length +1">
+                No existen registros
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-horizontal"
+          [formGroup]="formularioComprobante"
+          novalidate autocomplete="off">
+      <fieldset>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Numero</mat-label>
+            <input matInput placeholder="Ej: 5324 " formControlName="numero" required>
+            <mat-error *ngIf="mensajesError.numero.length > 0">
+              <div *ngFor="let mensaje of mensajesError.numero">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Fecha</mat-label>
+            <input matInput placeholder="Ej: DD/MM/AAAA" formControlName="fecha" required>
+            <mat-error *ngIf="mensajesError.fecha.length > 0">
+              <div *ngFor="let mensaje of mensajesError.fecha">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Cedula de identidad</mat-label>
+            <input matInput placeholder="Ej: 1725420895 " formControlName="ci" required>
+            <mat-error *ngIf="mensajesError.ci.length > 0">
+              <div *ngFor="let mensaje of mensajesError.ci">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Ej: Ramses " formControlName="nombre" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <input matInput placeholder="Ej: Matrícula " formControlName="tipo" required>
+            <mat-error *ngIf="mensajesError.tipo.length > 0">
+              <div *ngFor="let mensaje of mensajesError.tipo">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Forma pago</mat-label>
+            <input matInput placeholder="Ej: Tarjeta de Débito " formControlName="formapago" required>
+            <mat-error *ngIf="mensajesError.formapago.length > 0">
+              <div *ngFor="let mensaje of mensajesError.formapago">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Realizado por</mat-label>
+            <input matInput placeholder="Ej: Administrador " formControlName="realizadop" required>
+            <mat-error *ngIf="mensajesError.realizadop.length > 0">
+              <div *ngFor="let mensaje of mensajesError.realizadop">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Comprobante por</mat-label>
+            <input matInput placeholder=" " formControlName="comprobantep" required>
+            <mat-error *ngIf="mensajesError.comprobantep.length > 0">
+              <div *ngFor="let mensaje of mensajesError.comprobantep">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Beneficiario</mat-label>
+            <input matInput placeholder="Ej: Instituto Internacional " formControlName="beneficiario" required>
+            <mat-error *ngIf="mensajesError.beneficiario.length > 0">
+              <div *ngFor="let mensaje of mensajesError.beneficiario">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+
+

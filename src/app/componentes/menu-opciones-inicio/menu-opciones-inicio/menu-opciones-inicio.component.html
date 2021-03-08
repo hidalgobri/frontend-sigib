@@ -1,0 +1,10 @@
+<div class="col-sm-12 " *ngFor="let opcionMenu of opcionesMenuInicio; let i = index">
+  <div class="row separacion-fondo-1" style="width: 70%">
+    <app-opcion-menu
+      [textoBoton]="opcionMenu.textoBoton"
+      [descripcionOpcion]="opcionMenu.descripcionOpcion"
+      [pathImagen]="opcionMenu.pathImagen"
+      [routerLink]="opcionMenu.dirigirA"
+    ></app-opcion-menu>
+  </div>
+</div>

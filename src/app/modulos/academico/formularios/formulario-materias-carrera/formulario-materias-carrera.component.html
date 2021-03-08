@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-horizontal"
+          [formGroup]="formularioMateria"
+          novalidate autocomplete="off">
+      <fieldset>
+        <div class="row" >
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="Ej. Manicure" formControlName="nombre" required>
+              <mat-error *ngIf="mensajesError.nombre.length > 0">
+                <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Año</mat-label>
+              <select matNativeControl required placeholder="Escoja un el año" formControlName="anio">
+                <option value="Primero">Primero</option>
+                <option value="Segundo">Segundo</option>
+              </select>
+            </mat-form-field>
+              <mat-error *ngIf="mensajesError.anio.length > 0">
+                <div *ngFor="let mensaje of mensajesError.anio">{{mensaje}}</div>
+              </mat-error>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Tipo de materia</mat-label>
+              <select matNativeControl required placeholder="Escoja un Materia" formControlName="tipo">
+                <option value="Especialidad">Especialidad</option>
+                <option value="Complementaria">Complementaria</option>
+              </select>
+            </mat-form-field>
+              <mat-error *ngIf="mensajesError.tipo.length > 0">
+              <div *ngFor="let mensaje of mensajesError.tipo">{{mensaje}}</div>
+            </mat-error>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Carrera</mat-label>
+              <input matInput required formControlName="carrera">
+            </mat-form-field>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

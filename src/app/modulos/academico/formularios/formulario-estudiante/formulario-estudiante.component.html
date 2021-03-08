@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-horizontal"
+          [formGroup]="formularioEstudiante"
+          novalidate autocomplete="off">
+      <fieldset>
+        <div class="row" >
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Cédula</mat-label>
+              <input matInput placeholder="Ej. 1104125883" formControlName="cedula" required (ngModelChange)="validarCedular($event)">
+              <mat-error *ngIf="mensajesError.cedula.length > 0">
+                <div *ngFor="let mensaje of mensajesError.cedula">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="Ej. Juan" formControlName="nombre" required>
+              <mat-error *ngIf="mensajesError.nombre.length > 0">
+                <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Apellido</mat-label>
+              <input matInput placeholder="Ej. Jimenez" formControlName="apellido" required>
+              <mat-error *ngIf="mensajesError.apellido.length > 0">
+                <div *ngFor="let mensaje of mensajesError.apellido">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Teléfono</mat-label>
+              <input matInput placeholder="Ej. 0987192355" formControlName="telefono" required>
+              <mat-error *ngIf="mensajesError.telefono.length > 0">
+                <div *ngFor="let mensaje of mensajesError.telefono">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Correo Electrónico</mat-label>
+              <input matInput placeholder="Ej. usuario@gmail.com" formControlName="correo" required type="email">
+              <mat-error *ngIf="mensajesError.correo.length > 0">
+                <div *ngFor="let mensaje of mensajesError.correo">{{mensaje}}</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Carrera</mat-label>
+              <select matNativeControl required placeholder="Escoja un Carrera" formControlName="carrera">
+                <option value="belleza">Belleza</option>
+                <option value="cosmiatria">Cosmiatria</option>
+                <option value="micropigmentacion">Micropigmentacion</option>
+              </select>
+            </mat-form-field>
+              <mat-error *ngIf="mensajesError.carrera.length > 0">
+              <div *ngFor="let mensaje of mensajesError.carrera">{{mensaje}}</div>
+            </mat-error>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,128 @@
+<nav aria-label="breadcrumb" class="margen-top-migas">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/inicio']">
+        Menú Principal
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a
+        [routerLink]="['/administrador', 'menu', 'academico', 'menu-academico', 'estudiantes']"
+      >
+        Menú Estudiante
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Currículum
+    </li>
+  </ol>
+</nav>
+<div class="contenido">
+  <div class="row separacion-top-1 separacion-fondo-1">
+    <div class="col-sm-12 ">
+      <h3>Currículum </h3>
+      <p>Revise su currículum por materia </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-9">
+      <form class="form-inline" novalidate>
+        <div class="col-sm-12">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              aria-describedby="busquedaEmpresaHelp"
+              placeholder="Ingrese su búsqueda....."
+              #busqueda
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="btn"
+                id="button-addon2"
+                (click)="buscarPorNombre(busqueda.value)"
+              >
+                <i class="fas fa-search"></i> BUSCAR
+              </button>
+            </div>
+          </div>
+          <small id="busquedaRolHelp" class="form-text text-muted ayuda-span">
+            Busque un materia por su nombre.
+          </small>
+        </div>
+      </form>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+
+  <div class="row separacion-top-2 separacion-fondo-1">
+    <div class="col-sm-12">
+      <div class="col-sm-12">
+        <p-table
+          [columns]="columnas"
+          [value]="registroNotas"
+          [lazy]="true"
+          (onLazyLoad)="cargarDatosLazy($event)"
+          [paginator]="false"
+          [rows]="rows"
+          [totalRecords]="totalRecords"
+          [loading]="loading"
+          [first]="this.queryParams.skip"
+          [resizableColumns]="true"
+          [responsive]="true"
+        >
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th
+                class="text-center"
+                *ngFor="let col of columns"
+                [style.width]="col.width"
+              >
+                {{ col.header }}
+              </th>
+            </tr>
+          </ng-template>
+
+          <ng-template
+            pTemplate="body"
+            let-rowData
+            let-rowIndex
+            let-columns="columns"
+          >
+            <tr>
+              <td class="text-center" *ngFor="let col of columns">
+                <div *ngIf="col.field === 'notaPrimerQuimestre'">
+                  {{ rowData.notaPrimerQuimestre}}
+                </div>
+                <div *ngIf="col.field === 'notaSegundoQuimestre'">
+                  {{ rowData.notaSegundoQuimestre }}
+                </div>
+                <div *ngIf="col.field === 'profesor'">
+                  {{ rowData.curso.profesor.nombre }}
+                  {{ rowData.curso.profesor.apellido  }}
+                </div>
+                <div *ngIf="col.field === 'materia'">
+                  {{ rowData.curso.materia.nombre }}
+                </div>
+                <div *ngIf="col.field === 'anio'">
+                  {{ rowData.curso.materia.anio }}
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage" let-columns>
+            <tr>
+              <td [attr.colspan]="columns.length + 1">
+                No existen registros
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>

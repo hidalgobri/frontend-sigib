@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form
+      class="form-horizontal"
+      *ngIf="formularioCurso"
+      [formGroup]="formularioCurso"
+      novalidate
+      autocomplete="off"
+    >
+      <fieldset>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Grupo</mat-label>
+              <select
+                matNativeControl
+                required
+                placeholder="Escoja un grupo"
+                formControlName="grupo"
+              >
+                <option value="GR1">GR1</option>
+                <option value="GR2">GR2</option>
+                <option value="GR3">GR3</option>
+              </select>
+            </mat-form-field>
+            <mat-error *ngIf="mensajesError.grupo.length > 0">
+              <div *ngFor="let mensaje of mensajesError.grupo">
+                {{ mensaje }}
+              </div>
+            </mat-error>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Horario</mat-label>
+              <select
+                matNativeControl
+                required
+                placeholder="Escoja un Horario"
+                formControlName="horario"
+              >
+                <option value="Matutino">Matutino</option>
+                <option value="Vespertino">Vespertino</option>
+                <option value="Intensivo">Intensivo</option>
+              </select>
+            </mat-form-field>
+            <mat-error *ngIf="mensajesError.horario.length > 0">
+              <div *ngFor="let mensaje of mensajesError.horario">
+                {{ mensaje }}
+              </div>
+            </mat-error>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Aula</mat-label>
+              <input matInput placeholder="Ej. 210" formControlName="aula" />
+              <mat-error *ngIf="mensajesError.aula.length > 0">
+                <div *ngFor="let mensaje of mensajesError.aula">
+                  {{ mensaje }}
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Número Máximo estudiantes</mat-label>
+              <input
+                matInput
+                placeholder="Ej. 18"
+                formControlName="numeroMaximoAlumnos"
+              />
+              <mat-error *ngIf="mensajesError.numeroMaximoAlumnos.length > 0">
+                <div *ngFor="let mensaje of mensajesError.numeroMaximoAlumnos">
+                  {{ mensaje }}
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Período Académico</mat-label>
+              <input matInput placeholder="Ej. 2020" formControlName="periodoAcademico" required/>
+              <mat-error *ngIf="mensajesError.periodoAcademico.length > 0">
+                <div *ngFor="let mensaje of mensajesError.periodoAcademico">
+                  {{ mensaje }}
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Materia</mat-label>
+              <select
+                matNativeControl
+                [value]="curso?.materia"
+                [selectedIndex]="indiceArregloMateria"
+                formControlName="materia"
+              >
+                <option
+                  value="{{ materia | json }}"
+                  *ngFor="let materia of materia"
+                >
+                  {{ materia.nombre }}</option
+                >
+              </select>
+              <mat-error *ngIf="mensajesError.materia.length > 0">
+                <div *ngFor="let mensaje of mensajesError.materia">
+                  {{ mensaje }}
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field>
+              <mat-label>Profesor</mat-label>
+              <select
+                matNativeControl
+                [value]="curso?.profesor"
+                [selectedIndex]="indiceArregloProfesor"
+                formControlName="profesor"
+              >
+                <option
+                  value="{{ profesor | json }}"
+                  *ngFor="let profesor of profesor"
+                >
+                  {{ profesor.nombre }} {{ profesor.apellido }}</option
+                >
+              </select>
+              <mat-error *ngIf="mensajesError.profesor.length > 0">
+                <div *ngFor="let mensaje of mensajesError.profesor">
+                  {{ mensaje }}
+                </div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

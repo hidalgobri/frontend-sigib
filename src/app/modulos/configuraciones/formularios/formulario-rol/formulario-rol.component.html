@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-sm-12">
+		<form class="form-horizontal" [formGroup]="formularioRol" novalidate autocomplete="off">
+			<fieldset>
+				<div class="row">
+					<div class="col-sm-12">
+						<mat-form-field>
+							<mat-label>Código</mat-label>
+							<input matInput placeholder="Ej: 0001a " formControlName="codigo" required>
+							<mat-error *ngIf="mensajesError.codigo.length > 0">
+								<div *ngFor="let mensaje of mensajesError.codigo">{{mensaje}}</div>
+							</mat-error>
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<mat-form-field>
+							<mat-label>Nombre</mat-label>
+							<input matInput placeholder="Ej: Adminnistrador " formControlName="nombre" type="text" required>
+							<mat-error *ngIf="mensajesError.nombre.length > 0">
+								<div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+							</mat-error>
+						</mat-form-field>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

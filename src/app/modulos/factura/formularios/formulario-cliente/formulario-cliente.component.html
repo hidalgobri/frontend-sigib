@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-horizontal"
+          [formGroup]="formularioCliente"
+          novalidate autocomplete="off">
+      <fieldset>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Ej: 324 " formControlName="nombre" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <input matInput placeholder="Ej: Matricula " formControlName="tipo" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="Ej: Pago efectivo en caja " formControlName="apellido" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Cedula</mat-label>
+            <input matInput placeholder="Ej: dd/mm/aaaa " formControlName="cedula" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Direccion</mat-label>
+            <input matInput placeholder="Ej: 200.50 " formControlName="direccion" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Télefono</mat-label>
+            <input matInput placeholder="Ej: 200.50 " formControlName="telefono" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+

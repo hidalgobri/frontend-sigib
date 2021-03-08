@@ -1,0 +1,43 @@
+<!--   navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top   -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a
+    class="navbar-brand"
+    [routerLink]="['inicio']"
+  >
+    <img
+      src="assets/imagenes/logo-bolsa-de-valores.png"
+      alt=""
+      height="50"
+      width="100"
+    />
+
+    <img
+      src="assets/imagenes/logo-inicial-juego.png"
+      alt=""
+      height="50"
+      width="100"
+    />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarText"
+    aria-controls="navbarText"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="salir()"
+          ><i class="fas fa-sign-out-alt"></i> Salir</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+

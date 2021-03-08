@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-horizontal"
+          [formGroup]="formularioCarrera"
+          novalidate autocomplete="off">
+      <fieldset>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Ej: belleza " formControlName="nombre" required>
+            <mat-error *ngIf="mensajesError.nombre.length > 0">
+              <div *ngFor="let mensaje of mensajesError.nombre">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Duración</mat-label>
+            <input matInput placeholder="Ej: 2 " formControlName="duracion" required>
+            <mat-error *ngIf="mensajesError.duracion.length > 0">
+              <div *ngFor="let mensaje of mensajesError.duracion">{{mensaje}}</div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

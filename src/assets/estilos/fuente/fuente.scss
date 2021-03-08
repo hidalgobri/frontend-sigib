@@ -1,0 +1,11 @@
+.fuente-texto {
+  font-family: 'glacial indifference', sans-serif;
+}
+
+@font-face {
+  font-family: 'glacial indifference';
+  src:
+    url("~src/assets/estilos/fuente/glacial-indifference.regular.otf"),
+    local('glacial indifference')
+;
+}

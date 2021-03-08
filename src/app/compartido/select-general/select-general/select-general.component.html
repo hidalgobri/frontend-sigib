@@ -1,0 +1,12 @@
+<div class="">
+  <p-dropdown
+    [options]="registros"
+    [optionLabel]="opcionEtiqueta"
+    [placeholder]= "placeholder"
+    [showClear]="true"
+    (onChange)="enviarOpcionSeleccionada($event)"
+  ></p-dropdown>
+  <br>
+  <small id="busquedaDropdown" class="separacion-top-1"> {{placeholder}}
+  </small>
+</div>

@@ -1,27 +1,117 @@
-# FrontappSigib
+# Paso para levantar aplicación fullstack
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
-## Development server
+## Arquitectura
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![image](https://user-images.githubusercontent.com/50051312/111022678-3e69e500-83a2-11eb-9928-c1d2fcda729f.png)
 
-## Code scaffolding
+## Levantar nuestra intancia EC2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* ingresar a la consola de AWS
+* Lanzar la instancia EC2 y descarga el nuevo par de claves
 
-## Build
+## Ingreso a instancia EC2
+* Descargar putty client y putty gen
+* [Puty y putty gen](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+* Copiar IP pública de la instancia
+* Abrir el putty gen para generar la clave con la llave publica esto lo realiza por general las conexiones SSH.
+* Abrir putty client para ingreso a instancia
+* Se carga la ip y la llave privada generada 
+* El usuario es **ec2-user** y la clave es la puesta en el **puttygen**.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Instalación de ambiente de app
+* instalación de **git**
+	*  `sudo yum install git`
+* instalación de **nodejs**
+  	*  `curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -`
+  	* `sudo yum install nodejs`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* instalación de **nestjs**
+	*  `sudo npm i -g @nestjs/cli`
 
-## Running end-to-end tests
+* instalación de **pm2**
+	*  `sudo npm install pm2 -g`
+	
+## Clonar repos de backend
+* Clonar backend
+	* [sistema sigib backend](https://github.com/crisjc6/sigib.git)
+ * Comando `git clone https://github.com/crisjc6/sigib.git`
+ * ingresar con  **cd** hasta la carpeta del backend.
+ * instalación de dependencias comando:
+	 * `npm i`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Creación de base de datos RDS
+* Ingresar a la consola de AWS e ir a RDS 
+* Crear la base de datos Mysql
+* Descargar el cliente sql **Heidi sql**
+* Iniciar el cliente heidisql y crear la base **sigib**+
+* Copias las credenciales y el endpoint en el heidi 
+* Creamos la base de datos **sigib**
 
-## Further help
+## Cambios de variables proyecto backend
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Modificar las variables de entorno
+* ubicacion `backend-sigib/src/environment`
+* archivo `config.ts`
+* Modificamos el host, username, password, database	con el de la base de RDS.
+* Nos ubicamos a la altura de package.json
+* Modificamos la ip del backend 
+* Contruimos el proyecto una vez comando `nest build`
+* Verificar que la base tenga los permisos a ese puerto desde cualquier ip
+* Verificar la creación de los datos de prueba del **config.ts**.
+* * levantamos el proyecto comando 
+	* `npm run start:dev`
+* Registros creados correctamente
+* Paramos el servidor
+* Modificamops el config para no crear los datos de prueba
+* Revisamos en la base los datos creados
+
+## Duplicar AMI
+* Ir a consola AWS
+* Creación de AMI de la instancia
+* Ejecución de la nueva AMI
+* Seleccionamos el grupo de seguridad de la anterior instancia.
+* Finaliza la creación de las dos instancias.
+
+## Creación de demonio para levantar proyecto
+* Ingresamos con putty a las dos maquinas
+* Ubicamos en la parte del proyectos backend altura de package.json
+* comando `pm2 start dist/backend-sigib/src/main.js`
+* Probamos que las dos este disponibles 
+* parar `pm2 stop "nombre-app"`
+* restart `pm2 restart "nombre-app"`
+* probar en ip:8080/usuario
+* Este puerto debe estar habilitado en segurity group
+
+
+
+## Crear balanceador de carga
+* Ir a aws console
+* Seleccionamos crear load balancer
+	* nomre
+	* puerto del q esta la instancia 8080
+	* seguridad de grupo ingual q la instancia
+	* Configuramos la comprobación de estado
+	* Probar balanceador de carga
+	* agregar el 80 a nuestro segurity group
+	* Load Balancer funcionando
+	* Copiar el end point
+
+## Deploy Frontend en Amplify
+
+* Ir a repo [frontend](https://github.com/crisjc6/frontend-sigib.git)
+* Le damos en fork para que se añada a nuestros proyectos
+* abrimos AWS console
+* Clic en Amplify
+* Cambios el endpoint de nuestro backend
+* Cambios los environment del frontend con el load balancer sin / al final
+* Al final damos en crear y lanzar
+* Esperamos que se complete el pipeline de nuestro frontend
+* Abrimos el endpoint de nuestra app
+* habilitamos las comunicaciones insegura de nuestro navegador ya que nuestro balancerador no tiene un certificado seguro ssl para HTTPS
+* con el usuario "1104125883" y la contraseña "1104125883" podemos probar los diferentes roles de la app 
+
+Se completa la arquitectura final de la app
+
+Este readme, videos, docs, y archivos estaran disponibles en el siguiente drive
